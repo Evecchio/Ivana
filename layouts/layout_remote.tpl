@@ -50,6 +50,9 @@
 			{{ settings.css_code | raw }}
 		</style>
 
+		{# Ivana Design — Título fijo en pestaña #}
+		<script>document.title = 'Ivana Design';</script>
+
 		{# Ivana Design — Manrope Font #}
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -732,6 +735,12 @@
 				{# Specific store JS functions: product variants, cart, shipping, etc #}
 
 				{% include "static/js/store.js.tpl" %}
+
+			{# Ivana Design — Forzar título fijo (override cycling de pestañas inactivas) #}
+			document.title = 'Ivana Design';
+			document.addEventListener('visibilitychange', function() {
+				document.title = 'Ivana Design';
+			});
 
 			});
 
